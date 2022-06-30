@@ -38,8 +38,6 @@ sudo apt-get install -y mongodb-org
 sudo service mongod restart
 #or
 sudo systemctl start mongod
-
-
 ```
 
 ![Postman](https://mms.businesswire.com/media/20200203005177/en/761650/22/postman-logo-vert-2018.jpg)
@@ -64,4 +62,14 @@ sudo apt update
 sudo apt install snapd
 
 sudo snap install robo3t-snap
+```
+
+![Visual Studio Code](https://yt3.ggpht.com/_q52i8bUAEvcb7JR4e-eNTv23y2A_wg5sCz0NC0GrGtcw1CRMWJSOPVHUDh_bngD0q4gMvVeoA=s900-c-k-c0x00ffffff-no-rj)
+
+### How to Install Visual Studio Code on Ubuntu 20
+
+[Link](https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/)
+
+```
+sudo snap install --classic code
 ```
