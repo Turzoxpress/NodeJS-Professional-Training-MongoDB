@@ -125,7 +125,7 @@ Go to your **package.json** file. Replace current code with the code below:
 
 ```
 {
-  "name": "test.app",
+  "name": "test_app",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -139,6 +139,7 @@ Go to your **package.json** file. Replace current code with the code below:
     "nodemon": "^2.0.18"
   }
 }
+
 
 
 ```
