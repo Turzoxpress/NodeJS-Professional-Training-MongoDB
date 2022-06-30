@@ -1,6 +1,6 @@
 # How to install Ubuntu 20
 
-### Download ISO file for ubuntu
+### Download ISO file for Ubuntu 20
 
 [Link](https://ubuntu.com/download/desktop)
 
