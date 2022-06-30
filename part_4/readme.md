@@ -1,4 +1,4 @@
-# "**Hello World**" REST API backend
+# "**Test App**" REST API backend
 
 ## Create project
 
@@ -7,18 +7,18 @@
 cd Desktop
 
 # create a folder
-sudo mkdir hello_world
+sudo mkdir test_app
 
 # move to that folder
-cd hello_world
+cd test_app
 
 # create a project
 npm init
 ```
 
-Give your project a name i.e. **Hello World**
+Give your project a name i.e. **Test App**
 
-Press just enter, enter, enter until you crete the project. We will create necessary files later. Now open your **hello_world** folder with **Visual Studio Code**. Open the **Terminal** window from top left corner of Visual Studio Code.
+Press just enter, enter, enter until you crete the project. We will create necessary files later. Now open your **test_app** folder with **Visual Studio Code**. Open the **Terminal** window from top left corner of Visual Studio Code.
 
 We need to install **Express** framework which will help us to create REST APIs with Node.js
 
@@ -32,13 +32,23 @@ Install **nodemon** plugin. This plugin will help us to test our backend server 
 npm install nodemon
 ```
 
+We will need another plugin.
+
+```
+sudo npm install express-formidable
+```
+
 Go to your project. Create a file named **app.js**. Paste the code below into your **app.js** file.
 
 ```
 const express = require("express");
 const app = express();
 
-app.get("/", (req, res) => {
+app.get("/welcome", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.post("/postDataJSON", (req, res) => {
   res.send("Hello World!");
 });
 
@@ -50,7 +60,7 @@ Go to your **package.json** file. Replace current code with the code below:
 
 ```
 {
-  "name": "Hello World",
+  "name": "Test App",
   "version": "1.0.0",
   "description": "",
   "scripts": {
