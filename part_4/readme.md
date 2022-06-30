@@ -35,24 +35,89 @@ npm install nodemon
 We will need another plugin.
 
 ```
-sudo npm install express-formidable
+sudo npm install multiparty
 ```
 
 Go to your project. Create a file named **app.js**. Paste the code below into your **app.js** file.
 
 ```
 const express = require("express");
+const multiparty = require("multiparty");
 const app = express();
+app.use(express.json());
 
+// Simple welcome API
 app.get("/welcome", (req, res) => {
-  res.send("Hello World!");
+  return res.status(200).json({
+    status: "success",
+    message: "Your backend server is working successfully!",
+  });
 });
 
-app.post("/postDataJSON", (req, res) => {
-  res.send("Hello World!");
+// Dummy GET API
+app.get("/getValuePI", (req, res) => {
+  return res.status(200).json({
+    status: "success",
+    value: 3.1416,
+    message: "This GET api will return the value of π",
+  });
+});
+
+// Dummy POST API - from URL Query Parameter
+app.post("/squareQueryParams", (req, res) => {
+  const value = req.query.value;
+  const square = value * value;
+  return res.status(200).json({
+    status: "success",
+    value: square,
+    message:
+      "This POST api will return the square of a value - URL Query Parameter",
+  });
+});
+
+// Dummy POST API - from RAW URL Parameter
+app.post("/squareRawURL/:value", (req, res) => {
+  const value = req.params.value;
+  const square = value * value;
+  return res.status(200).json({
+    status: "success",
+    value: square,
+    message:
+      "This POST api will return the square of a value - RAW URL Parameter",
+  });
+});
+
+// Dummy POST API - from JSON body
+app.post("/squareJSON", (req, res) => {
+  const value = req.body.value;
+  const square = value * value;
+  return res.status(200).json({
+    status: "success",
+    value: square,
+    message: "This POST api will return the square of a value - JSON body",
+  });
+});
+
+// Dummy POST API - form data
+app.post("/squareFormData", (req, res) => {
+  const form = new multiparty.Form();
+
+  form.parse(req, function (err, fields, files) {
+    //---------
+    const value = fields.value;
+    const square = value * value;
+    return res.status(200).json({
+      status: "success",
+      value: square,
+      message: "This POST api will return the square of a value - Form Data",
+    });
+
+    //---------------
+  });
 });
 
 app.listen(3000);
+
 
 ```
 
@@ -60,7 +125,7 @@ Go to your **package.json** file. Replace current code with the code below:
 
 ```
 {
-  "name": "Test App",
+  "name": "test.app",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -70,26 +135,13 @@ Go to your **package.json** file. Replace current code with the code below:
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.1",
+    "multiparty": "^4.2.3",
     "nodemon": "^2.0.18"
   }
 }
 
-```
-
-You will see a file named **package-lock.json** has been created. Don't worry about this file. It will manage our installed packages automatically.
-
-Now start your server by just this command below:
 
 ```
-npm start
-```
-
-If everything is ok, you will see your sever started successfully!
-Open Postman or any browser and type **localhost:3000** or **your_ip:3000**. If you see the output as **"Hello World"** then your NodeJS backend server is working successfully!
-
-### **Congratulations!**
-
-You successfully created your first NodeJS REST API backend application!
 
 ## Contributing
 
