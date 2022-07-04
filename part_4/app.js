@@ -1,6 +1,6 @@
 const express = require("express");
-const multiparty = require("multiparty");
 const app = express();
+
 app.use(express.json());
 
 // Simple welcome API
@@ -52,24 +52,6 @@ app.post("/squareJSON", (req, res) => {
     status: "success",
     value: square,
     message: "This POST api will return the square of a value - JSON body",
-  });
-});
-
-// Dummy POST API - form data
-app.post("/squareFormData", (req, res) => {
-  const form = new multiparty.Form();
-
-  form.parse(req, function (err, fields, files) {
-    //---------
-    const value = fields.value;
-    const square = value * value;
-    return res.status(200).json({
-      status: "success",
-      value: square,
-      message: "This POST api will return the square of a value - Form Data",
-    });
-
-    //---------------
   });
 });
 
