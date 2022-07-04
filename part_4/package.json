@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "nodemon app3.js"
+    "start": "nodemon app.js"
   },
   "author": "Mahbubur Rahman Turzo",
   "license": "ISC",
