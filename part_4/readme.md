@@ -1,4 +1,4 @@
-# "**Test App**" REST API backend
+# "**Hello World**" REST API backend
 
 ## Create project
 
@@ -7,18 +7,18 @@
 cd Desktop
 
 # create a folder
-sudo mkdir test_app
+sudo mkdir hello_world
 
 # move to that folder
-cd test_app
+cd hello_world
 
 # create a project
 npm init
 ```
 
-Give your project a name i.e. **Test App**
+Give your project a name i.e. **Hello World**
 
-Press just enter, enter, enter until you crete the project. We will create necessary files later. Now open your **test_app** folder with **Visual Studio Code**. Open the **Terminal** window from top left corner of Visual Studio Code.
+Press just enter, enter, enter until you crete the project. We will create necessary files later. Now open your **hello_world** folder with **Visual Studio Code**. Open the **Terminal** window from top left corner of Visual Studio Code.
 
 We need to install **Express** framework which will help us to create REST APIs with Node.js
 
@@ -32,15 +32,54 @@ Install **nodemon** plugin. This plugin will help us to test our backend server 
 npm install nodemon
 ```
 
-We will need another plugin.
+Go to your project. Create a file named **app.js**. Paste the code below into your **app.js** file.
 
 ```
-sudo npm install multer
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.listen(3000);
+
 ```
 
-Excellent! Now follow the video tutorial!
+Go to your **package.json** file. Replace current code with the code below:
 
-## Video tutorial coming soon...
+```
+{
+  "name": "Hello World",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Mahbubur Rahman Turzo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.18"
+  }
+}
+
+```
+
+You will see a file named **package-lock.json** has been created. Don't worry about this file. It will manage our installed packages automatically.
+
+Now start your server by just this command below:
+
+```
+npm start
+```
+
+If everything is ok, you will see your sever started successfully!
+Open Postman or any browser and type **localhost:3000** or **your_ip:3000**. If you see the output as **"Hello World"** then your NodeJS backend server is working successfully!
+
+### **Congratulations!**
+
+You successfully created your first NodeJS REST API backend application!
 
 ## Contributing
 

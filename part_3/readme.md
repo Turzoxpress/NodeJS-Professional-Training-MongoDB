@@ -1,90 +1,75 @@
-# "**Hello World**" REST API backend
+# Installing necessary softwares
 
-## Create project
+![NodeJS](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Node.js_logo_2015.svg/2560px-Node.js_logo_2015.svg.png)
 
-```
-# redirect to your Desktop or projects folder
-cd Desktop
+### Install NodeJS 16 on Ubuntu 20.04
 
-# create a folder
-sudo mkdir hello_world
-
-# move to that folder
-cd hello_world
-
-# create a project
-npm init
-```
-
-Give your project a name i.e. **Hello World**
-
-Press just enter, enter, enter until you crete the project. We will create necessary files later. Now open your **hello_world** folder with **Visual Studio Code**. Open the **Terminal** window from top left corner of Visual Studio Code.
-
-We need to install **Express** framework which will help us to create REST APIs with Node.js
+[Link](https://www.stewright.me/2022/01/tutorial-install-nodejs-16-on-ubuntu-20-04/)
 
 ```
-npm install express
+# We will install node 16
+curl -s https://deb.nodesource.com/setup_16.x | sudo bash
+
+sudo apt install nodejs -y
+
+#Check node version
+node --version
+
+#Check npm version
+npm --version
 ```
 
-Install **nodemon** plugin. This plugin will help us to test our backend server very fast! It will restart the server everytime when we make any change/edit.
+![MongoDB](https://www.ictdemy.com/images/5728/mdb.png)
+
+### Install MongoDB Community Edition on Ubuntu 20
+
+[Link](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
 
 ```
-npm install nodemon
+wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+
+
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+
+sudo service mongod restart
+#or
+sudo systemctl start mongod
 ```
 
-Go to your project. Create a file named **app.js**. Paste the code below into your **app.js** file.
+![Postman](https://mms.businesswire.com/media/20200203005177/en/761650/22/postman-logo-vert-2018.jpg)
+
+### Install Postman on Ubuntu 20.04
+
+[Link](https://linuxize.com/post/how-to-install-postman-on-ubuntu-20-04/)
 
 ```
-const express = require("express");
-const app = express();
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-app.listen(3000);
-
+sudo snap install postman
 ```
 
-Go to your **package.json** file. Replace current code with the code below:
+![Robo 3T](https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_f49ab27210b28cdaf3e3bd3f7d2d629f/robo3t.png)
+
+### Install robo3t-snap on Ubuntu
+
+[Link](https://snapcraft.io/install/robo3t-snap/ubuntu)
 
 ```
-{
-  "name": "Hello World",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "start": "nodemon app.js"
-  },
-  "author": "Mahbubur Rahman Turzo",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.1",
-    "nodemon": "^2.0.18"
-  }
-}
+sudo apt update
 
+sudo apt install snapd
+
+sudo snap install robo3t-snap
 ```
 
-You will see a file named **package-lock.json** has been created. Don't worry about this file. It will manage our installed packages automatically.
+![Visual Studio Code](https://yt3.ggpht.com/_q52i8bUAEvcb7JR4e-eNTv23y2A_wg5sCz0NC0GrGtcw1CRMWJSOPVHUDh_bngD0q4gMvVeoA=s900-c-k-c0x00ffffff-no-rj)
 
-Now start your server by just this command below:
+### How to Install Visual Studio Code on Ubuntu 20
+
+[Link](https://linuxize.com/post/how-to-install-visual-studio-code-on-ubuntu-20-04/)
 
 ```
-npm start
+sudo snap install --classic code
 ```
-
-If everything is ok, you will see your sever started successfully!
-Open Postman or any browser and type **localhost:3000** or **your_ip:3000**. If you see the output as **"Hello World"** then your NodeJS backend server is working successfully!
-
-### **Congratulations!**
-
-You successfully created your first NodeJS REST API backend application!
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
