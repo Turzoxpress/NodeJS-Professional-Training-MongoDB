@@ -3,9 +3,6 @@ const app = express();
 
 app.use(express.json());
 
-// const multer = require("multer");
-// const upload = multer({ dest: "uploads/" });
-
 //----------------
 const multer = require("multer");
 
@@ -13,24 +10,25 @@ function getSystemTime() {
   return Date.now();
 }
 
-// function customTrimString(name) {
-//   let finalFileName = "";
-//   for (let i = 0; i < name.length; i++) {
-//     if (name.charAt(i) != " ") {
-//       finalFileName = finalFileName + name.charAt(i);
-//     }
-//   }
-
-//   return finalFileName;
-// }
+//-- Get 10 digit random number
+function getRandomNumber() {
+  return Math.floor(1000000000 + Math.random() * 900000000);
+}
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
     cb(null, "uploads");
   },
   async filename(req, file, cb) {
-    const newFilePath = getSystemTime() + "_" + file.originalname;
-    //let newCustomPath = await customTrimString(newFilePath);
+    const newFilePath =
+      getRandomNumber() +
+      "_" +
+      getRandomNumber() +
+      "_" +
+      getSystemTime() +
+      "_" +
+      file.originalname;
+
     console.log("New Image Path : " + newFilePath);
     cb(null, newFilePath);
   },
