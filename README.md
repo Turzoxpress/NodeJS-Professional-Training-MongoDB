@@ -4,7 +4,7 @@
 
 Instructed By : [Mahbubur Rahman Turzo](https://github.com/Turzoxpress)
 
-## Instructed By : [Youtube Video Tutorial Playlist](https://www.youtube.com/watch?v=9gMoukN81Ow&list=PLp6lX102mPy4A7ajKYu0oxMr9zpdVepvy)
+## [Youtube Video Tutorial Playlist](https://www.youtube.com/watch?v=9gMoukN81Ow&list=PLp6lX102mPy4A7ajKYu0oxMr9zpdVepvy)
 
 ## Tools/Frameworks/Software/Technologies used till now:
 
