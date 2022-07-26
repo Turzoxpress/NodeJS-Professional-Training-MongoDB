@@ -23,7 +23,7 @@ Instructed By : [Mahbubur Rahman Turzo](https://github.com/Turzoxpress)
 - Apache & Apache Reverse Proxy
 - Load Balancing
 
-## Do you want to be a Backend Software Engineer? Then its the best free Bengali tutorial for you which is totally free!
+## Do you want to be a Backend Software Engineer? Then its the best free Bengali tutorial for you!
 
 ## [Let's start to watch free youtube video tutorials](https://www.youtube.com/watch?v=9gMoukN81Ow&list=PLp6lX102mPy4A7ajKYu0oxMr9zpdVepvy)
 
